@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { User } from "./User";
 
 @Entity()
 export class Location {
@@ -6,14 +7,14 @@ export class Location {
     id: number
 
     @Column()
-    latitude: string
+    latitude: number
 
     @Column()
-    longitude: string
+    longitude: number
 
     @Column()
     adresse: string
 
-    @Column()
-    user_id: number
+    @ManyToOne(() => User, (user) => user.locations)
+    user: User
 }
