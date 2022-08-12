@@ -15,6 +15,6 @@ export class Location {
     @Column()
     adresse: string
 
-    @ManyToOne(() => User, (user) => user.locations)
+    @ManyToOne((type) => User, (user) => user.locations)
     user: User
 }

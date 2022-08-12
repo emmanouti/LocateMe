@@ -1,6 +1,6 @@
 import { AppDataSource } from "./data-source"
 import { User } from "./entity/User"
-import {Location} from "./entity/Location";
+import { Location } from "./entity/Location";
 
 AppDataSource.initialize().then(async () => {
 

@@ -13,6 +13,6 @@ export class User {
     @Column()
     password: string
 
-    @OneToMany(() => Location, (location) => location.user)
-    locations: Location[]
+    @OneToMany((type) => Location, (location) => location.user)
+    locations: Promise<Location[]>;
 }
