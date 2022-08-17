@@ -3,7 +3,7 @@ GET http://localhost:7000/users/
 Accept: application/json
 
 ### GET request 1 user
-GET http://localhost:7000/users/2/
+GET http://localhost:7000/users/1/
 Accept: application/json
 
 ### Send POST request with json body

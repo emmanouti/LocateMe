@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import {User} from "./entity/User";
-import {Location} from "./entity/Location";
+import { User } from "./entity/User";
+import { Location } from "./entity/Location";
 
 
 const dbConfig = () => new DataSource({
