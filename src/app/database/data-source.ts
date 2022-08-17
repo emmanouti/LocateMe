@@ -1,9 +1,10 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
-import { Location } from './entity/Location'
+import {User} from "./entity/User";
+import {Location} from "./entity/Location";
 
-export const AppDataSource = new DataSource({
+
+const dbConfig = () => new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3307,
@@ -16,3 +17,6 @@ export const AppDataSource = new DataSource({
     migrations: [],
     subscribers: [],
 })
+
+
+ export default dbConfig;

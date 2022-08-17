@@ -4,7 +4,7 @@ import { User } from "./User";
 @Entity()
 export class Location {
     @PrimaryGeneratedColumn()
-    id: number
+    location_id: number
 
     @Column()
     latitude: number
@@ -15,6 +15,6 @@ export class Location {
     @Column()
     adresse: string
 
-    @ManyToOne(() => User, (user) => user.locations)
+    @ManyToOne((type) => User, (user) => user.locations)
     user: User
 }

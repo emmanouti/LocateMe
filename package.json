@@ -5,8 +5,8 @@
    "main": "index.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
-      "start": "ts-node src/index.ts",
+      "dev": "ts-node-dev --respawn --pretty --transpile-only src/app/index.ts",
+      "start": "ts-node src/app/index.ts",
       "typeorm": "typeorm-ts-node-commonjs"
    },
    "repository": {
