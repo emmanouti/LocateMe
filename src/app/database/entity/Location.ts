@@ -4,7 +4,7 @@ import { User } from "./User";
 @Entity()
 export class Location {
     @PrimaryGeneratedColumn()
-    id: number
+    location_id: number
 
     @Column()
     latitude: number

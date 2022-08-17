@@ -1,11 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, BaseEntity} from "typeorm"
 import { Location } from "./Location";
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
 
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
     mail: string
