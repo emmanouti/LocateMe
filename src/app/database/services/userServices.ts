@@ -1,4 +1,4 @@
-import {User} from "../entity/User";
+import { User } from "../entity/User";
 
 class UserServices {
     findUsers = async (): Promise<any | null> => {
@@ -12,7 +12,7 @@ class UserServices {
 
 
     findOneUser = async (user_id: number): Promise<any | null> => {
-        const result = await User.findOne({where: {id: user_id}});
+        const result = await User.findOne({where: {id: user_id}, relations: {locations: true}});
 
         if (!result) {
             return null;

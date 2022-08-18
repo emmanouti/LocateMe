@@ -9,7 +9,6 @@ const { User } = Service;
 class UserControllers {
     findUsers = async (req: Request, res: Response) => {
         const response = await User.findUsers();
-        console.log(response)
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
         }

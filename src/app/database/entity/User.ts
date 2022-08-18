@@ -13,6 +13,6 @@ export class User extends BaseEntity {
     @Column()
     password: string
 
-    @OneToMany((type) => Location, (location) => location.user)
-    locations: Promise<Location[]>;
+    @OneToMany(() => Location, (location) => location.user)
+    locations: Location[]
 }

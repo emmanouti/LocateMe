@@ -1,20 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm"
 import { User } from "./User";
 
 @Entity()
-export class Location {
+export class Location extends BaseEntity {
     @PrimaryGeneratedColumn()
-    location_id: number
+    id: number
 
-    @Column()
+    @Column({type: "decimal", precision: 6, scale: 3 })
     latitude: number
 
-    @Column()
+    @Column({type: "decimal", precision: 6, scale: 3})
     longitude: number
 
     @Column()
     adresse: string
 
-    @ManyToOne((type) => User, (user) => user.locations)
+    @ManyToOne((type) => User, (user) => user.locations, {cascade: true})
     user: User
+
 }

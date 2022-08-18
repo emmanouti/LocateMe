@@ -1,5 +1,5 @@
-import {User} from "./User"
-import {Location} from "./Location"
+import { User } from "./User"
+import { Location } from "./Location"
 
 const entities = {
     User,
