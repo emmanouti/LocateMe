@@ -9,7 +9,7 @@ const User = new UserServices();
 const Location = new LocationServices();
 
 const Service = {
-    User,
+    userService: User,
     Location
 };
 

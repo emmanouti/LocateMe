@@ -2,13 +2,16 @@ import { Request, Response } from "express";
 import { middlewares } from "../middlewares";
 import { Location } from "../database/entity/Location"
 import Service from "../database/services";
+import { getRepository } from "typeorm";
+import { validate } from "class-validator";
+import { User } from "../database/entity/User"
 
 const { responses, messages, codes } = middlewares;
 
-const { User } = Service;
+const { userService } = Service;
 class UserControllers {
     findUsers = async (req: Request, res: Response) => {
-        const response = await User.findUsers();
+        const response = await userService.findUsers();
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
         }
@@ -27,7 +30,7 @@ class UserControllers {
     findOneUser = async (req: Request, res: Response) => {
         const { user_id } = req.params;
 
-        const response = await User.findOneUser(parseInt(user_id));
+        const response = await userService.findOneUser(parseInt(user_id));
 
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);
@@ -40,18 +43,28 @@ class UserControllers {
         const {
             mail,
             password,
-            locations
+            role
         }: {
             mail: string;
             password: string,
-            locations: Promise<Location[]>;
+            role: string,
         } = req.body;
 
-        const response = await User.createUser({
-            mail,
-            password,
-            locations
-        });
+        let user = new User();
+        user.mail = mail;
+        user.password = password;
+        user.role = role;
+
+        const errors = await validate(user);
+        if (errors.length > 0) {
+            res.status(400).send(errors)
+            return;
+        }
+        user.hashPassword();
+
+        const response = await userService.createUser(
+            {user}
+        );
 
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);
@@ -62,7 +75,7 @@ class UserControllers {
         return responses.success(
             codes.created(),
             messages.created(),
-            { user_id, mail, password, locations },
+            { user_id, mail, password },
             res
         );
     };
@@ -71,20 +84,27 @@ class UserControllers {
         const {
             mail,
             password,
+            role,
             locations
         }: {
             mail: string;
             password: string,
+            role: string,
             locations: Promise<Location[]>;
         } = req.body;
 
+        let user;
         const { user_id } = req.params;
+        user.mail = mail;
+        user.password = password
+        user.role = role;
+        const errors = await validate(user);
+        if (errors.length > 0) {
+            res.status(400).send(errors);
+            return;
+        }
 
-        const response = await User.updateUser(parseInt(user_id), {
-            mail,
-            password,
-            locations
-        });
+        const response = await userService.updateUser(parseInt(user_id), {user});
 
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
@@ -93,7 +113,7 @@ class UserControllers {
         return responses.success(
             codes.ok(),
             messages.ok(),
-            { user_id, mail, password, locations },
+            { user_id, mail, password, role, locations },
             res
         );
     };
@@ -102,7 +122,7 @@ class UserControllers {
     deleteUser = async (req: Request, res: Response) => {
         const { user_id } = req.params;
 
-        const response = await User.deleteUser(parseInt(user_id));
+        const response = await userService.deleteUser(parseInt(user_id));
 
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);

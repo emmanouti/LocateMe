@@ -2,7 +2,9 @@ import { User } from "../entity/User";
 
 class UserServices {
     findUsers = async (): Promise<any | null> => {
-        const result = await User.findAndCount();
+        const result = await User.findAndCount({
+            select: ["id", "mail", "role"]
+        });
 
         if (!result) {
             return null;
@@ -12,7 +14,7 @@ class UserServices {
 
 
     findOneUser = async (user_id: number): Promise<any | null> => {
-        const result = await User.findOne({where: {id: user_id}, relations: {locations: true}});
+        const result = await User.findOneOrFail({where: {id: user_id}, relations: {locations: true}, select: ["id", "mail", "role"]});
 
         if (!result) {
             return null;

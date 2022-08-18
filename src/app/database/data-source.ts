@@ -14,7 +14,7 @@ const dbConfig = () => new DataSource({
     synchronize: true,
     logging: false,
     entities: [User, Location],
-    migrations: [],
+    migrations: ["src/app/migration/1660827915228-CreateAdminUser.ts"],
     subscribers: [],
 })
 
