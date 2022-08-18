@@ -6,12 +6,25 @@ Accept: application/json
 GET http://localhost:7000/users/1/locations
 Accept: application/json
 
+### GET request one location from one user
+GET http://localhost:7000/users/1/locations/2
+Accept: application/json
+
 ### Send POST request json body
-POST http://localhost:7000/users/1/create
+POST http://localhost:7000/users/2/create
 Content-Type: application/json
 
 {
-  "longitude": 13.7443,
-  "latitude": -9.3797,
-  "adresse": "98 rue de la paix 83012 Paris, France"
+  "longitude": 78.7443,
+  "latitude": -12.3797,
+  "adresse": "37 place du marché 24900 Valence, France"
+}
+
+### Send PUT request with json body
+PUT http://localhost:7000/users/1/update/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "adresse": "changement d'adresse"
 }

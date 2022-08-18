@@ -15,7 +15,7 @@ export class Location extends BaseEntity {
     @Column()
     adresse: string
 
-    @ManyToOne((type) => User, (user) => user.locations, {cascade: ['insert']})
-    userId: User
+    @ManyToOne((type) => User, (user) => user.locations, {cascade: true})
+    user: User
 
 }

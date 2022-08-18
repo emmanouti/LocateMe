@@ -13,6 +13,6 @@ export class User extends BaseEntity {
     @Column()
     password: string
 
-    @OneToMany(() => Location, (location) => location.userId)
+    @OneToMany(() => Location, (location) => location.user)
     locations: Location[]
 }

@@ -11,8 +11,8 @@ POST http://localhost:7000/create
 Content-Type: application/json
 
 {
-  "mail": "test2@test.com",
-  "password": "motdepasse2"
+  "mail": "vraiePersonne@test.com",
+  "password": "m123456"
 }
 
 ### Send PUT request with json body
