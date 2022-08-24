@@ -5,7 +5,7 @@ import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import routes from "./routes";
 import Helmet from "helmet";
-import dbConfig from "./database/data-source";
+import {dbConfig} from "./database/data-source";
 
 dotenv.config();
 

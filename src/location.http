@@ -11,13 +11,13 @@ GET http://localhost:7000/users/1/locations/2
 Accept: application/json
 
 ### Send POST request json body
-POST http://localhost:7000/users/2/create
+POST http://localhost:7000/users/1/create
 Content-Type: application/json
 
 {
-  "longitude": 78.7443,
-  "latitude": -12.3797,
-  "adresse": "37 place du marché 24900 Valence, France"
+  "longitude": 45.7493,
+  "latitude": -98.4563,
+  "adresse": "98 rue de l'école 45000 Orléans, France"
 }
 
 ### Send PUT request with json body

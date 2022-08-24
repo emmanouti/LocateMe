@@ -72,9 +72,10 @@ class LocationControllers {
         const response = await Location.createLocation({
             latitude,
             longitude,
-            adresse,
-            userId
-        });
+            adresse
+        }, userId);
+
+        console.log("response:", response)
 
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);

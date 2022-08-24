@@ -4,7 +4,7 @@ import { User } from "./entity/User";
 import { Location } from "./entity/Location";
 
 
-const dbConfig = () => new DataSource({
+export const dbConfig = () => new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3307,
@@ -19,4 +19,3 @@ const dbConfig = () => new DataSource({
 })
 
 
- export default dbConfig;

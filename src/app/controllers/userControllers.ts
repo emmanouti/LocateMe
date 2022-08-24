@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { middlewares } from "../middlewares";
 import { Location } from "../database/entity/Location"
 import Service from "../database/services";
-import { getRepository } from "typeorm";
 import { validate } from "class-validator";
 import { User } from "../database/entity/User"
 
@@ -97,7 +96,8 @@ class UserControllers {
         const { user_id } = req.params;
         user.mail = mail;
         user.password = password
-        user.role = role;
+        user.role = role
+        user.locations = locations;
         const errors = await validate(user);
         if (errors.length > 0) {
             res.status(400).send(errors);

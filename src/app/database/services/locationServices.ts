@@ -1,4 +1,5 @@
 import { Location } from "../entity/Location";
+import { User } from "../entity/User";
 
 class LocationServices {
     findAllLocations = async (): Promise<any | null> => {
@@ -24,8 +25,11 @@ class LocationServices {
         return result;
     };
 
-    createLocation = async (data: object): Promise<any | null> => {
-        const result = await Location.insert(data);
+    createLocation = async (data: object, userId): Promise<any | null> => {
+        const userRelated = await User.find({where: {id: userId}})
+        let location = new Location();
+
+        const result = await Location.save(data);
 
         if (!result) {
             return null;
