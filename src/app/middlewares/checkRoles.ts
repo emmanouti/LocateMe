@@ -1,18 +1,16 @@
 import { Request, Response, NextFunction } from "express";
-import { getRepository } from "typeorm";
-
+import dataSourceInstance from "../database/data-source";
 import { User } from "../database/entity/User";
-import dbConfig from "../database/data-source";
 
 export const checkRole = (roles: Array<string>) => {
     return async (req: Request, res: Response, next: NextFunction) => {
-        //Get the user ID from previous midleware
+
         const id = res.locals.jwtPayload.userId;
 
-        //Get user role from the database
-
-        const userRepository = getRepository(User);
+        console.log(roles)
+        const userRepository = dataSourceInstance.getRepository(User);
         let user: User;
+
         try {
             user = await userRepository.findOneOrFail(id);
         } catch (id) {

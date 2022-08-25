@@ -1,25 +1,15 @@
-import { Request, Response, Application } from "express";
+import { Router } from "express";
 import UserControllers from "../controllers/userControllers";
-import { middlewares } from "../middlewares";
 import {checkJwt} from "../middlewares/checkJwt";
 import {checkRole} from "../middlewares/checkRoles";
 
-const { responses, messages, codes } = middlewares;
+    const router = Router();
 
-const User = new UserControllers();
+    router.get("/", [checkJwt, checkRole(["ADMIN"])], UserControllers.findUsers);
+    router.get("/:user_id", [checkJwt, checkRole(["ADMIN"])],  UserControllers.findOneUser);
+    router.post("/create", [checkJwt, checkRole(["ADMIN"])],   UserControllers.createUser);
+    router.put("/update/:user_id", [checkJwt, checkRole(["ADMIN"])],  UserControllers.updateUser);
+    router.delete("/delete/:user_id", [checkJwt, checkRole(["ADMIN"])],  UserControllers.deleteUser);
 
-class Routes {
-    public router = (app: Application): any => {
-        app.get("/users", [checkJwt,  checkRole(["ADMIN"])], User.findUsers);
-        app.get("/users/:user_id", [checkJwt, checkRole(["ADMIN"])], User.findOneUser);
-        app.post("/create", [checkJwt, checkRole(["ADMIN"])], User.createUser);
-        app.put("/update/:user_id", [checkJwt, checkRole(["ADMIN"])], User.updateUser);
-        app.delete("/delete/:user_id", [checkJwt, checkRole(["ADMIN"])], User.deleteUser);
 
-        app.all("*", (req: Request, res: Response) => {
-            responses.ok(codes.notFound(), messages.pageNotFound(), res);
-        });
-    };
-}
-
-export const user = new Routes().router;
+export default router;

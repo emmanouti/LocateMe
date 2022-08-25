@@ -1,29 +1,30 @@
 ### GET request all users
-GET http://localhost:7000/users/
+GET http://localhost:7000/user
 Accept: application/json
 
 ### GET request 1 user
-GET http://localhost:7000/users/1/
+GET http://localhost:7000/user/4
 Accept: application/json
 
 ### Send POST request with json body
-POST http://localhost:7000/create
+POST http://localhost:7000/user/create
 Content-Type: application/json
 
 {
-  "mail": "vraiePersonne@test.com",
-  "password": "m123456"
+  "mail": "toto@mail.com",
+  "password": "totomdp",
+  "role":  "USER"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/update/2
+PUT http://localhost:7000/user/update/3
 Accept: application/json
 Content-Type: application/json
 
 {
   "mail": "updatedEmail@test.com",
-  "password": "motdepasseUpdated"
+  "role": "USER"
 }
 
 ### Send DELETE request
-DELETE http://localhost:7000/delete/2
+DELETE http://localhost:7000/user/delete/4

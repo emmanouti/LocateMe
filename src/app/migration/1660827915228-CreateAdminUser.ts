@@ -1,5 +1,6 @@
 import {getRepository, MigrationInterface, QueryRunner} from "typeorm";
 import { User } from "../database/entity/User";
+import dataSourceInstance from "../database/data-source";
 
 export class CreateAdminUser1660827915228 implements MigrationInterface {
 
@@ -9,7 +10,7 @@ export class CreateAdminUser1660827915228 implements MigrationInterface {
         user.password = "admin";
         user.hashPassword();
         user.role = "ADMIN";
-        const userRepository = getRepository(User);
+        const userRepository = dataSourceInstance.getRepository(User);
         await userRepository.save(user);
     }
 

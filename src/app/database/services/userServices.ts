@@ -5,6 +5,7 @@ class UserServices {
         const result = await User.findAndCount({
             select: ["id", "mail", "role"]
         });
+        console.log(result)
 
         if (!result) {
             return null;

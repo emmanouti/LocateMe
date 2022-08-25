@@ -1,0 +1,17 @@
+### POST login
+POST http://localhost:7000/auth/login/
+Content-Type: application/json
+
+{
+  "mail": "admin",
+  "password": "admin"
+}
+
+### POST change password
+POST http://localhost:7000/auth/change-password
+Content-Type: application/json
+
+{
+  "oldPassword": "totomdp",
+  "newPassword" : "newtotomdp"
+}

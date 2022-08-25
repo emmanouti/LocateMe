@@ -7,12 +7,11 @@
       "tsc": "tsc",
       "start": "set debug=* && ts-node-dev --respawn --transpile-only ./src/app/index.ts",
       "prod": "tsc && node ./build/app.js",
-      "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+      "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/app/database/data-source.ts",
+      "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/app/database/data-source.ts",
       "migrate": "typeorm migrations:generate -n",
       "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "ts-node-dev --respawn --pretty --transpile-only src/app/index.ts",
-      "typeorm:win": "ts-node -r tsconfig-paths/register node_modules\\typeorm\\cli.js",
-      "migration:generate:win": "npm run typeorm:win migration:generate -- -n"
+      "dev": "ts-node-dev --respawn --pretty --transpile-only src/app/index.ts"
    },
    "repository": {
       "type": "git",
