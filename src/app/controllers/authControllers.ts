@@ -1,13 +1,13 @@
-import { Request, Response } from "express";
+import {Request, Response} from "express";
 import * as jwt from "jsonwebtoken";
 import dataSourceInstance from "../database/data-source";
-import { validate } from "class-validator";
-import { User } from "../database/entity/User";
+import {validate} from "class-validator";
+import {User} from "../database/entity/User";
 import config from "../config";
 
 class AuthController {
     static login = async (req: Request, res: Response) => {
-        let { mail, password } = req.body;
+        let {mail, password} = req.body;
         if (!(mail && password)) {
             res.status(400).send();
         }
@@ -15,7 +15,7 @@ class AuthController {
         const userRepository = dataSourceInstance.getRepository(User);
         let user: User;
         try {
-            user = await userRepository.findOneOrFail({ where: { mail } });
+            user = await userRepository.findOneOrFail({where: {mail}});
             console.log("mail found")
         } catch (error) {
             res.status(401).send();
@@ -26,32 +26,34 @@ class AuthController {
         }
 
         const token = jwt.sign(
-            { userId: user.id, username: user.mail },
+            {userId: user.id, username: user.mail},
             config.jwtSecret,
-            { expiresIn: "1h" }
+            {expiresIn: "1h"}
         );
 
         res.send(token);
     };
 
     static changePassword = async (req: Request, res: Response) => {
+        console.log(req.headers);
         const id = res.locals.jwtPayload.userId;
         console.log(id)
-        const { oldPassword, newPassword } = req.body;
-        if (!(oldPassword && newPassword)) {
+        const {oldPassword, newPassword} = req.body;
+        if (!(newPassword)) {
             res.status(400).send();
         }
-
+        console.log(newPassword, "new password")
         const userRepository = dataSourceInstance.getRepository(User);
         let user: User;
         try {
-            user = await userRepository.findOneOrFail(id);
-        } catch (id) {
-            res.status(401).send();
+            user = await userRepository.findOneOrFail({where: {id}});
+        } catch (e) {
+            res.status(401).send(e.message);
         }
+        console.log(user.checkIfUnencryptedPasswordIsValid(oldPassword))
 
         if (!user.checkIfUnencryptedPasswordIsValid(oldPassword)) {
-            res.status(401).send();
+            res.status(401).send("Ce n'est pas l'ancien password");
             return;
         }
 
@@ -65,7 +67,8 @@ class AuthController {
         user.hashPassword();
         await userRepository.save(user);
 
-        res.status(204).send();
+        res.status(204).send({message: "Succès le mdp a été modifié"});
     };
 }
+
 export default AuthController;
