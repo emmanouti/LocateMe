@@ -10,7 +10,7 @@ Content-Type: application/json
 ### POST change password
 POST http://localhost:7000/auth/change-password
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 {
   "oldPassword": "admin2",

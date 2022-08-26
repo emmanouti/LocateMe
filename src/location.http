@@ -1,39 +1,39 @@
 ### GET request all locations
 GET http://localhost:7000/locations/
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### GET request all locations from one user
 GET http://localhost:7000/locations/2
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### GET request one location from one user
-GET http://localhost:7000/locations/2/1
+GET http://localhost:7000/locations/2/6
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### Send POST request json body
 POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 {
-  "longitude": 12.7493,
-  "latitude": -19.0563,
-  "adresse": "98 rue des filatiers 31000 Toulouse, France"
+  "longitude": 23.7493,
+  "latitude": -89.0563,
+  "adresse": "18 rue Saint-Michel 31400 Toulouse, France"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/locations/5/update
+PUT http://localhost:7000/locations/6/update
 Accept: application/json
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 {
-  "adresse": "changement d'adresse"
+  "adresse": "24 rue Saint-Michel 31400 Toulouse, France"
 }
 
 ### Send DELETE request with json body
-DELETE http://localhost:7000/locations/1/delete
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+DELETE http://localhost:7000/locations/6/delete
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
