@@ -16,7 +16,6 @@ class AuthController {
         let user: User;
         try {
             user = await userRepository.findOneOrFail({where: {mail}});
-            console.log("mail found")
         } catch (error) {
             res.status(401).send();
         }
@@ -35,14 +34,11 @@ class AuthController {
     };
 
     static changePassword = async (req: Request, res: Response) => {
-        console.log(req.headers);
         const id = res.locals.jwtPayload.userId;
-        console.log(id)
         const {oldPassword, newPassword} = req.body;
         if (!(newPassword)) {
             res.status(400).send();
         }
-        console.log(newPassword, "new password")
         const userRepository = dataSourceInstance.getRepository(User);
         let user: User;
         try {
@@ -50,7 +46,6 @@ class AuthController {
         } catch (e) {
             res.status(401).send(e.message);
         }
-        console.log(user.checkIfUnencryptedPasswordIsValid(oldPassword))
 
         if (!user.checkIfUnencryptedPasswordIsValid(oldPassword)) {
             res.status(401).send("Ce n'est pas l'ancien password");

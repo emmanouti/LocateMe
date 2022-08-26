@@ -1,22 +1,22 @@
 ### GET request all locations
 GET http://localhost:7000/locations/
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MjEwOTUsImV4cCI6MTY2MTUyNDY5NX0.sa-d3qWZKmqi-b4ooO_lA13_-HFmxR6U4JYd7pyZGOo
 
 ### GET request all locations from one user
 GET http://localhost:7000/locations/2
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MjEwOTUsImV4cCI6MTY2MTUyNDY5NX0.sa-d3qWZKmqi-b4ooO_lA13_-HFmxR6U4JYd7pyZGOo
 
 ### GET request one location from one user
-GET http://localhost:7000/locations/2/6
+GET http://localhost:7000/locations/2/7
 Accept: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MjEwOTUsImV4cCI6MTY2MTUyNDY5NX0.sa-d3qWZKmqi-b4ooO_lA13_-HFmxR6U4JYd7pyZGOo
 
 ### Send POST request json body
 POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MjEwOTUsImV4cCI6MTY2MTUyNDY5NX0.sa-d3qWZKmqi-b4ooO_lA13_-HFmxR6U4JYd7pyZGOo
 
 {
   "longitude": 23.7493,
@@ -25,10 +25,10 @@ auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIj
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/locations/6/update
+PUT http://localhost:7000/locations/5/update
 Accept: application/json
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MjEwOTUsImV4cCI6MTY2MTUyNDY5NX0.sa-d3qWZKmqi-b4ooO_lA13_-HFmxR6U4JYd7pyZGOo
 
 {
   "adresse": "24 rue Saint-Michel 31400 Toulouse, France"

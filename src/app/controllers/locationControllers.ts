@@ -2,15 +2,13 @@ import { Request, Response } from "express";
 import { middlewares } from "../middlewares";
 import Service from "../database/services";
 import { User } from "../database/entity/User";
-import { Location } from "../database/entity/Location";
+
 const { responses, messages, codes } = middlewares;
-import userControllers from "./userControllers";
-import dataSourceInstance from "../database/data-source";
 
 const { locationService } = Service;
 
 class LocationControllers {
-    static findAllLocations = async (req, res) => {
+    static findAllLocations = async (req: Request, res: Response) => {
         const response = await locationService.findAllLocations()
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
@@ -68,16 +66,8 @@ class LocationControllers {
             adresse: string;
         } = req.body;
 
-        const userId = parseInt(user_id);
-        const userRepository = dataSourceInstance.getRepository(User);
-        const locationRepository = dataSourceInstance.getRepository(Location);
-        let user = await userRepository.findOne({where: {id: userId}})
-        const location = new Location();
-        location.latitude = latitude
-        location.longitude = longitude
-        location.adresse = adresse
-        location.user = user
-        const response = await locationRepository.save(location);
+        const response = await locationService.createLocation(parseInt(user_id), {latitude, longitude, adresse})
+
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);
         }

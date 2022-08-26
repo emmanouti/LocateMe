@@ -1,30 +1,43 @@
 import { Request, Response } from "express";
-import { validate } from "class-validator";
-import { User } from "../database/entity/User"
-import dataSourceInstance from "../database/data-source";
+import Service from "../database/services";
+import { middlewares } from "../middlewares";
 
+const { responses, messages, codes } = middlewares;
+const { userService } = Service;
 
 class UserControllers {
     static findUsers = async (req: Request, res: Response) => {
-        const userRepository = dataSourceInstance.getRepository(User);
-        const users = await userRepository.find({
-            select: ["id", "mail", "role"]
-        })
-        res.send(users);
+        const response = await userService.findAllUsers();
+        if (!response) {
+            return responses.error(codes.error(), messages.error(), res);
+        }
+        return responses.success(
+            codes.ok(),
+            messages.ok(),
+            {
+                count: response[1],
+                data: response[0],
+            },
+            res
+        )
     };
 
     static findOneUser = async (req: Request, res: Response) => {
         const { user_id } = req.params;
-        const userRepository = dataSourceInstance.getRepository(User);
-        console.log(user_id)
-        try {
-            const user = await userRepository.findOne( {where: {id: parseInt(user_id)}, relations: {
-                locations: true,
-                },});
-            res.send(user)
-        } catch (error) {
-            res.status(404).send("User not found");
+        const response = await userService.findOneUser(parseInt(user_id))
+        if (!response) {
+            return responses.error(codes.error(), messages.error(), res);
         }
+
+        return responses.success(
+            codes.ok(),
+            messages.ok(),
+            {
+                count: response[1],
+                data: response[0],
+            },
+            res
+        );
     };
 
     static createUser = async (req: Request, res: Response) => {
@@ -37,72 +50,44 @@ class UserControllers {
             password: string,
             role: string,
         } = req.body;
-
-        let user = new User();
-        user.mail = mail;
-        user.password = password;
-        user.role = role;
-        console.log(user.locations)
-        const errors = await validate(user);
-        if (errors.length > 0) {
-            res.status(400).send(errors)
-            return;
+        const response = await userService.createUser({mail, password, role});
+        if (!response) {
+            return responses.error(codes.error(), messages.notFound(), res);
         }
-        user.hashPassword();
 
-        const userRepository = dataSourceInstance.getRepository(User);
-
-        try {
-            await userRepository.save(user);
-        } catch (e) {
-            res.status(409).send("Mail already in use");
-            return;
-        }
-        res.status(201).send("User created");
+        return responses.success(codes.ok(), messages.ok(), response, res);
     };
 
     static updateUser = async (req: Request, res: Response) => {
         const {user_id} = req.params;
+
         const {mail, role}: {mail: string, role: string} = req.body;
 
-        const userRepository = dataSourceInstance.getRepository(User);
-        let user;
-        try {
-            user = await userRepository.findOneOrFail({where: {id: parseInt(user_id)}});
-        } catch (error) {
-            res.status(404).send("User not found");
-            return;
+        const response = await userService.updateUser(parseInt(user_id), {mail, role})
+
+        if (!response) {
+            return responses.error(codes.error(), messages.error(), res);
         }
-        user.mail = mail;
-        user.role = role;
-        const errors = await validate(user);
-        if (errors.length > 0) {
-            res.status(400).send(errors);
-            return;
-        }
-        try {
-            await userRepository.save(user);
-        } catch (e) {
-            res.status(409).send("Mail already in use");
-            return;
-        }
-        res.status(204).send();
+
+        return responses.success(
+            codes.ok(),
+            messages.ok(),
+            {
+                mail, role
+            },
+            res
+        );
     };
 
     static deleteUser = async (req: Request, res: Response) => {
-        const { user_id } = req.params;
-
-        const userRepository = dataSourceInstance.getRepository(User);
-        let user: User;
-        try {
-            user = await userRepository.findOneOrFail({where: {id: parseInt(user_id)}})
-        } catch (error) {
-            res.status(404).send("User not found");
-            return;
+        const {user_id} = req.params;
+        const response = await userService.deleteUser(parseInt(user_id));
+        if (!response) {
+            return responses.error(codes.error(), messages.error(), res);
         }
-        await userRepository.delete(user.id);
-        res.status(204).send();
-    };
+
+        return responses.ok(codes.ok(), messages.ok(), res);
+    }
 }
 
 export default UserControllers;

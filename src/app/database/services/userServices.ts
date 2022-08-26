@@ -1,21 +1,49 @@
 import { User } from "../entity/User";
+import dataSourceInstance from "../data-source";
+import {validate} from "class-validator";
 
 class UserServices {
-    findUsers = async (): Promise<any | null> => {
-        const result = await User.findAndCount({
+    findAllUsers = async (): Promise<any | null> => {
+        const userRepository = dataSourceInstance.getRepository(User);
+        const result = await userRepository.findAndCount({
             select: ["id", "mail", "role"]
         });
-        console.log(result)
 
         if (!result) {
-            return null;
+            return "no users found";
         }
         return result;
     };
 
 
     findOneUser = async (user_id: number): Promise<any | null> => {
-        const result = await User.findOneOrFail({where: {id: user_id}, relations: {locations: true}, select: ["id", "mail", "role"]});
+        const userRepository = dataSourceInstance.getRepository(User);
+        const result = await userRepository.find({select: {id: true, mail: true, role: true},relations: {locations: true}, where: {id: user_id}});
+        if (!result) {
+            return "user not found";
+        }
+        return result;
+    };
+
+    createUser = async (data): Promise<any | null> => {
+        let user = new User();
+        user.mail = data.mail;
+        user.password = data.password;
+        user.role = data.role;
+
+        const errors = await validate(user);
+        if (errors.length > 0) {
+            return errors.map(e => e.constraints)
+        }
+        user.hashPassword();
+
+        const userRepository = dataSourceInstance.getRepository(User);
+        let result;
+        try {
+            result = await userRepository.save(user);
+        } catch (e) {
+            return "Mail already in use";
+        }
 
         if (!result) {
             return null;
@@ -23,17 +51,26 @@ class UserServices {
         return result;
     };
 
-    createUser = async (data: object): Promise<any | null> => {
-        const result = await User.insert(data);
-
-        if (!result) {
-            return null;
+    updateUser = async (user_id: number, data): Promise<any | null> => {
+        const userRepository = dataSourceInstance.getRepository(User)
+        let user;
+        try {
+            user = await userRepository.findOneOrFail({where: {id: user_id}});
+        } catch (error) {
+            return "User not found";
         }
-        return result;
-    };
-
-    updateUser = async (user_id: number, data: object): Promise<any | null> => {
-        const result = await User.update(user_id, data);
+        user.mail = data.mail;
+        user.role = data.role;
+        const errors = await validate(user);
+        if (errors.length > 0) {
+            return errors;
+        }
+        let result;
+        try {
+            result =  await userRepository.save(user);
+        } catch (e) {
+            return "Mail already in use";
+        }
 
         if (!result) {
             return null;
@@ -42,8 +79,14 @@ class UserServices {
     };
 
     deleteUser = async (user_id: number): Promise<any | null> => {
-        const result = await User.delete(user_id);
-
+        const userRepository = dataSourceInstance.getRepository(User);
+        let user: User;
+        try {
+            user = await userRepository.findOneOrFail({where: {id: user_id}})
+        } catch (error) {
+            return "user not found";
+        }
+        const result = await userRepository.delete(user.id);
         if (!result) {
             return null;
         }
