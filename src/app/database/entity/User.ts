@@ -11,9 +11,11 @@ export class User extends BaseEntity {
     id: number;
 
     @Column()
+    @IsNotEmpty()
     mail: string
 
     @Column()
+    @IsNotEmpty()
     @Length(4, 100)
     password: string
 
@@ -21,7 +23,7 @@ export class User extends BaseEntity {
     @IsNotEmpty()
     role: string;
 
-    @OneToMany(() => Location, (location) => location.user)
+    @OneToMany(() => Location, (location) => location.user, {cascade: true})
     locations: Location[]
 
     hashPassword() {

@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm"
 import { User } from "./User";
+import {IsNotEmpty} from "class-validator";
 
 @Entity()
 export class Location extends BaseEntity {
@@ -15,7 +16,8 @@ export class Location extends BaseEntity {
     @Column()
     adresse: string
 
-    @ManyToOne((type) => User, (user) => user.locations, {cascade: true})
+    @ManyToOne((type) => User, (user) => user.locations)
+    @IsNotEmpty()
     user: User
 
 }

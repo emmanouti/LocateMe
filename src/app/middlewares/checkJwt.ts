@@ -4,7 +4,7 @@ import config from "../config";
 
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
     const token = <string>req.headers["auth"];
-    const tokenFormated = token.replace("Bearer ", "");
+    const tokenFormated = token?.replace("Bearer ", "");
     let jwtPayload;
     try {
         jwtPayload = <any>jwt.verify(tokenFormated, config.jwtSecret);
@@ -20,7 +20,6 @@ export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
     const newToken = jwt.sign({ userId, mail }, config.jwtSecret, {
         expiresIn: "1h"
     });
-    console.log("token checked")
     res.setHeader("token", newToken);
 
     next();

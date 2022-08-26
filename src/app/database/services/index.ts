@@ -10,7 +10,7 @@ const Location = new LocationServices();
 
 const Service = {
     userService: User,
-    Location
+    locationService: Location
 };
 
 export default Service;

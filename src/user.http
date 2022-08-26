@@ -3,16 +3,17 @@ GET http://localhost:7000/user
 Accept: application/json
 
 ### GET request 1 user
-GET http://localhost:7000/user/4
-Accept: application/json
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
 
 ### Send POST request with json body
 POST http://localhost:7000/user/create
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "mail": "toto@mail.com",
-  "password": "totomdp",
+  "mail": "johndoe@mail.com",
+  "password": "mdpdifficile",
   "role":  "USER"
 }
 

@@ -1,118 +1,159 @@
-POST http://localhost:7000/auth/change-password
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T121801.200.json
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+###
+
+PUT http://localhost:7000/locations/5/update
+Accept: application/json
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
-  "oldPassword": "admin",
-  "newPassword" : "admin2"
+  "adresse": "changement d'adresse"
+}
+
+<> 2022-08-26T121136.200.json
+
+###
+
+PUT http://localhost:7000/locations/5/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "adresse": "changement d'adresse"
+}
+
+<> 2022-08-26T121117.401.html
+
+###
+
+PUT http://localhost:7000/locations/1/update/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "adresse": "changement d'adresse"
 }
 
 ###
 
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+DELETE http://localhost:7000/locations/1/delete/4
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
-{
-  "oldPassword": "admin2",
-  "newPassword" : "admin"
-}
-
-<> 2022-08-25T164456.401.html
+<> 2022-08-26T120842.200.json
 
 ###
 
-POST http://localhost:7000/auth/change-password
+DELETE http://localhost:7000/locations/1/delete/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120824.200.json
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120802.200.json
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/1
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120751.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120719.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T120657.401.html
+
+###
+
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
-  "oldPassword": "admin2",
-  "newPassword" : "admin"
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
+}
+
+<> 2022-08-26T120547.200.json
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
 }
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
-  "oldPassword": "admin",
-  "newPassword" : "admin2"
-}
-
-<> 2022-08-25T164410.401.html
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
-
-{
-  "oldPassword": "admin",
-  "newPassword" : "admin2"
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
 }
 
 ###
 
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
+<> 2022-08-26T115446.200.json
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
 }
 
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-<> 2022-08-25T164145.401.html
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-<> 2022-08-25T164142.401.html
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0Mzg0NjcsImV4cCI6MTY2MTQ0MjA2N30.dlEJveGUfHM3VEHUCmtwr1I8agp8qUIraZhfYnhUv-s
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
+<> 2022-08-26T115430.201.json
 
 ###
 
@@ -124,185 +165,304 @@ Content-Type: application/json
   "password": "admin"
 }
 
-<> 2022-08-25T164107.200.html
+<> 2022-08-26T115416.200.html
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
 }
 
-<> 2022-08-25T164044.401.html
+<> 2022-08-26T115407.401.html
 
 ###
 
-POST http://localhost:7000/auth/change-password
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T114830.200.json
+
+###
+
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
 }
 
-<> 2022-08-25T164040.401.html
+<> 2022-08-26T114810.201.json
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+{
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
+}
+
+<> 2022-08-26T114739.404.html
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+{
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
+}
+
+<> 2022-08-26T114641.404.html
+
+###
+
+POST http://localhost:7000/user/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
+
+{
+  "mail": "johndoe@mail.com",
+  "password": "mdpdifficile",
+  "role":  "USER"
+}
+
+<> 2022-08-26T114624.404.html
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+{
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
+}
+
+<> 2022-08-26T114427.404.html
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+{
+  "longitude": 32.7493,
+  "latitude": -1.0563,
+  "adresse": "45 boulevard Metz 31000 Toulouse, France"
+}
+
+<> 2022-08-26T114411.404.html
+
+###
+
+GET http://localhost:7000/locations/2/1
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T114101.200.json
+
+###
+
+GET http://localhost:7000/locations/2/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T114050.200.json
+
+###
+
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+<> 2022-08-26T114010.200.json
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+{
+  "longitude": 56.7493,
+  "latitude": -12.0563,
+  "adresse": "32 rue Bayard 31000 Toulouse, France"
+}
+
+<> 2022-08-26T113953.201.json
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+<> 2022-08-26T113436.200.json
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+<> 2022-08-26T113111.200.json
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+GET http://localhost:7000/user/3
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU5MzcsImV4cCI6MTY2MTUwOTUzN30.pcWcr7iuoC8qinCDd1LkGYu-15Dkn1Y-Cfrd94GyG6g
+
+###
+
+POST http://localhost:7000/auth/login/
+Content-Type: application/json
+
+{
+  "mail": "admin",
+  "password": "admin"
+}
+
+<> 2022-08-26T112537.200.html
 
 ###
 
 POST http://localhost:7000/auth/change-password
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "oldPassword": "admin2",
+  "newPassword" : "admin"
+}
+
+<> 2022-08-26T112523.401.html
+
+###
+
+POST http://localhost:7000/auth/change-password
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
+
+{
+  "oldPassword": "admin2",
+  "newPassword" : "admin"
 }
 
 ###
 
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
+GET http://localhost:7000/user/3
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDUzNTUsImV4cCI6MTY2MTUwODk1NX0.V8S-xTr_nPCGajROv8WiuIIufH9yokdRDedREUcq-mA
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/user/create
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "mail": "johndoe@mail.com",
+  "password": "mdpdifficile",
+  "role":  "USER"
 }
+
+<> 2022-08-26T112427.201.html
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/user/create
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "mail": "johndoe@mail.com",
+  "password": "mdp",
+  "role":  "USER"
 }
+
+<> 2022-08-26T112409.400.json
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/user/create
 Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer jwtPayloadeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzcyMzIsImV4cCI6MTY2MTQ0MDgzMn0.FXiatvA-m0WQSpsQIhgwtg-AOy2aJteZXaF1yihel7A
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "mail": "johndoe@mail.com",
+  "password": "mdp",
+  "role":  "USER"
 }
 
 ###
 
 POST http://localhost:7000/user/create
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
 
 {
-  "mail": "toto@mail.com",
-  "password": "totomdp",
+  "mail": "johndoe@mail.com",
+  "password": "mdp",
+  "role":  "USER"
+}
+
+###
+
+POST http://localhost:7000/user/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDU3NTQsImV4cCI6MTY2MTUwOTM1NH0.hAKIez0qGDG1T-739GKNWxxcLF9qkvnn8ibtTevyNH0
+
+{
+  "mail": "johndoe@mail.com",
+  "password": "mdp",
   "role":  "USER"
 }
 
@@ -313,226 +473,22 @@ Content-Type: application/json
 
 {
   "mail": "admin",
-  "password": "admin"
+  "password": "admin2"
 }
 
-<> 2022-08-25T162032.200.html
+<> 2022-08-26T112234.200.html
 
 ###
 
-POST http://localhost:7000/auth/change-password
+POST http://localhost:7000/user/create
 Content-Type: application/json
-auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzYyMDMsImV4cCI6MTY2MTQzOTgwM30.8tijDyA5ZDr5mWekJQ_n83lgiTppru8I0uAWhSz0ZVw
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDUzNTUsImV4cCI6MTY2MTUwODk1NX0.V8S-xTr_nPCGajROv8WiuIIufH9yokdRDedREUcq-mA
 
 {
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
+  "mail": "johndoe@mail.com",
+  "password": "mdp",
+  "role":  "USER"
 }
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzYyMDMsImV4cCI6MTY2MTQzOTgwM30.8tijDyA5ZDr5mWekJQ_n83lgiTppru8I0uAWhSz0ZVw
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE0MzYyMDMsImV4cCI6MTY2MTQzOTgwM30.8tijDyA5ZDr5mWekJQ_n83lgiTppru8I0uAWhSz0ZVw
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/login/
-Content-Type: application/json
-
-{
-  "mail": "admin",
-  "password": "admin"
-}
-
-<> 2022-08-25T160323.200.html
-
-###
-
-POST http://localhost:7000/auth/login/
-Content-Type: application/json
-
-{
-  "mail": "admin",
-  "password": "admin"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password/5
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-<> 2022-08-25T153324.404.html
-
-###
-
-POST http://localhost:7000/auth/change-password/5
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-<> 2022-08-25T153255.404.html
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-POST http://localhost:7000/auth/change-password
-Content-Type: application/json
-
-{
-  "oldPassword": "totomdp",
-  "newPassword" : "newtotomdp"
-}
-
-###
-
-GET http://localhost:7000/user
-Accept: application/json
-
-<> 2022-08-25T152431.200.json
-
-###
-
-GET http://localhost:7000/user
-Accept: application/json
 
 ###
 

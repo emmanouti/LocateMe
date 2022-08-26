@@ -1,5 +1,6 @@
 import { Location } from "../entity/Location";
 import { User } from "../entity/User";
+import dataSourceInstance from "../data-source";
 
 class LocationServices {
     findAllLocations = async (): Promise<any | null> => {
@@ -21,18 +22,6 @@ class LocationServices {
         const result = await Location.findOne({where: {id: location_id, user: user_id}})
         if (!result) {
             return "no location found";
-        }
-        return result;
-    };
-
-    createLocation = async (data: object, userId): Promise<any | null> => {
-        const userRelated = await User.find({where: {id: userId}})
-        let location = new Location();
-
-        const result = await Location.save(data);
-
-        if (!result) {
-            return null;
         }
         return result;
     };

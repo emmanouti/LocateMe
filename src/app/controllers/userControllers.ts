@@ -18,7 +18,9 @@ class UserControllers {
         const userRepository = dataSourceInstance.getRepository(User);
         console.log(user_id)
         try {
-            const user = await userRepository.find( {where: {id: parseInt(user_id)}});
+            const user = await userRepository.findOne( {where: {id: parseInt(user_id)}, relations: {
+                locations: true,
+                },});
             res.send(user)
         } catch (error) {
             res.status(404).send("User not found");
@@ -40,7 +42,7 @@ class UserControllers {
         user.mail = mail;
         user.password = password;
         user.role = role;
-
+        console.log(user.locations)
         const errors = await validate(user);
         if (errors.length > 0) {
             res.status(400).send(errors)

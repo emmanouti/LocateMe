@@ -1,30 +1,39 @@
 ### GET request all locations
-GET http://localhost:7000/locations
+GET http://localhost:7000/locations/
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 ### GET request all locations from one user
-GET http://localhost:7000/users/1/locations
+GET http://localhost:7000/locations/2
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 ### GET request one location from one user
-GET http://localhost:7000/users/1/locations/2
+GET http://localhost:7000/locations/2/1
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
 
 ### Send POST request json body
-POST http://localhost:7000/users/1/create
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
-  "longitude": 45.7493,
-  "latitude": -98.4563,
-  "adresse": "98 rue de l'école 45000 Orléans, France"
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/users/1/update/2
+PUT http://localhost:7000/locations/5/update
 Accept: application/json
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
 
 {
   "adresse": "changement d'adresse"
 }
+
+### Send DELETE request with json body
+DELETE http://localhost:7000/locations/1/delete
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
