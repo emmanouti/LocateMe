@@ -1,30 +1,39 @@
 ### GET request all locations
-GET http://localhost:7000/locations
+GET http://localhost:7000/locations/
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### GET request all locations from one user
-GET http://localhost:7000/users/1/locations
+GET http://localhost:7000/locations/2
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### GET request one location from one user
-GET http://localhost:7000/users/1/locations/2
+GET http://localhost:7000/locations/2/6
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 ### Send POST request json body
-POST http://localhost:7000/users/2/create
+POST http://localhost:7000/locations/2/create
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 {
-  "longitude": 78.7443,
-  "latitude": -12.3797,
-  "adresse": "37 place du marché 24900 Valence, France"
+  "longitude": 23.7493,
+  "latitude": -89.0563,
+  "adresse": "18 rue Saint-Michel 31400 Toulouse, France"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/users/1/update/2
+PUT http://localhost:7000/locations/6/update
 Accept: application/json
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
 
 {
-  "adresse": "changement d'adresse"
+  "adresse": "24 rue Saint-Michel 31400 Toulouse, France"
 }
+
+### Send DELETE request with json body
+DELETE http://localhost:7000/locations/6/delete
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo

@@ -1,0 +1,461 @@
+GET http://localhost:7000/user
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144546.200.json
+
+###
+
+DELETE http://localhost:7000/user/delete/7
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+###
+
+DELETE http://localhost:7000/user/delete/7
+
+<> 2022-08-26T144526.401.html
+
+###
+
+GET http://localhost:7000/user
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144507.200.json
+
+###
+
+PUT http://localhost:7000/user/update/7
+Accept: application/json
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+{
+  "mail": "anothermail@test.com",
+  "role": "USER"
+}
+
+###
+
+PUT http://localhost:7000/user/update/7
+Accept: application/json
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+{
+  "mail": "updatedEmail@test.com",
+  "role": "USER"
+}
+
+<> 2022-08-26T144449.409.html
+
+###
+
+PUT http://localhost:7000/user/update/7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "mail": "updatedEmail@test.com",
+  "role": "USER"
+}
+
+<> 2022-08-26T144429.401.html
+
+###
+
+GET http://localhost:7000/user
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144407.200.json
+
+###
+
+POST http://localhost:7000/user/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+{
+  "mail": "janedoe@mail.com",
+  "password": "janeMDPsecret",
+  "role":  "USER"
+}
+
+<> 2022-08-26T144350.201.html
+
+###
+
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144313.200.json
+
+###
+
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144312.200.json
+
+###
+
+GET http://localhost:7000/user/1
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144302.200.json
+
+###
+
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144253.200.json
+
+###
+
+GET http://localhost:7000/user
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
+
+<> 2022-08-26T144223.200.json
+
+###
+
+POST http://localhost:7000/auth/login/
+Content-Type: application/json
+
+{
+  "mail": "admin",
+  "password": "admin"
+}
+
+<> 2022-08-26T144152.200.html
+
+###
+
+POST http://localhost:7000/auth/change-password
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+{
+  "oldPassword": "admin2",
+  "newPassword" : "admin"
+}
+
+###
+
+POST http://localhost:7000/auth/login/
+Content-Type: application/json
+
+{
+  "mail": "admin",
+  "password": "admin2"
+}
+
+<> 2022-08-26T144115.200.html
+
+###
+
+POST http://localhost:7000/auth/change-password
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+{
+  "oldPassword": "admin",
+  "newPassword" : "admin2"
+}
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T144039.200.json
+
+###
+
+GET http://localhost:7000/locations/2/6
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T144037.200.json
+
+###
+
+DELETE http://localhost:7000/locations/6/delete
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T144026.200.json
+
+###
+
+DELETE http://localhost:7000/locations/6/delete
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T144014.401.html
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T144003.200.json
+
+###
+
+GET http://localhost:7000/locations/2/6
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T143958.200.json
+
+###
+
+PUT http://localhost:7000/locations/6/update
+Accept: application/json
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+{
+  "adresse": "24 rue Saint-Michel 31400 Toulouse, France"
+}
+
+<> 2022-08-26T143952.200.json
+
+###
+
+PUT http://localhost:7000/locations/6/update
+Accept: application/json
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "adresse": "24 rue Saint-Michel 31400 Toulouse, France"
+}
+
+<> 2022-08-26T143937.401.html
+
+###
+
+GET http://localhost:7000/locations/2/6
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T143904.200.json
+
+###
+
+GET http://localhost:7000/locations/2/6
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T143856.401.html
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T143839.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T143824.401.html
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+{
+  "longitude": 23.7493,
+  "latitude": -89.0563,
+  "adresse": "18 rue Saint-Michel 31400 Toulouse, France"
+}
+
+<> 2022-08-26T143814.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T143731.401.html
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc0MTcsImV4cCI6MTY2MTUyMTAxN30.o6_TNlGCp1IQQdInvdLzeDvdBm0B1YA1f5mFNcLoogo
+
+<> 2022-08-26T143722.200.json
+
+###
+
+POST http://localhost:7000/auth/login/
+Content-Type: application/json
+
+{
+  "mail": "admin",
+  "password": "admin"
+}
+
+<> 2022-08-26T143657.200.html
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T121801.200.json
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+###
+
+PUT http://localhost:7000/locations/5/update
+Accept: application/json
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "adresse": "changement d'adresse"
+}
+
+<> 2022-08-26T121136.200.json
+
+###
+
+PUT http://localhost:7000/locations/5/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "adresse": "changement d'adresse"
+}
+
+<> 2022-08-26T121117.401.html
+
+###
+
+PUT http://localhost:7000/locations/1/update/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "adresse": "changement d'adresse"
+}
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/4
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120842.200.json
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/3
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120824.200.json
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120802.200.json
+
+###
+
+DELETE http://localhost:7000/locations/1/delete/1
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120751.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T120719.200.json
+
+###
+
+GET http://localhost:7000/locations/2
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDM5NTEsImV4cCI6MTY2MTUwNzU1MX0.8ROEisq-ecvEfuo-xnfcCqs_reVSL8yoIbIFYR-QzGw
+
+<> 2022-08-26T120657.401.html
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
+}
+
+<> 2022-08-26T120547.200.json
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
+}
+
+###
+
+POST http://localhost:7000/locations/2/create
+Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+{
+  "longitude": 12.7493,
+  "latitude": -19.0563,
+  "adresse": "98 rue des filatiers 31000 Toulouse, France"
+}
+
+###
+
+GET http://localhost:7000/locations/
+Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MDc2NTYsImV4cCI6MTY2MTUxMTI1Nn0.58Ww6rMNXChPgDvNPE926xSwIKMJz43MDG6VzSG04mo
+
+<> 2022-08-26T115446.200.json
+
+###
+

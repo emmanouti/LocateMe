@@ -9,8 +9,8 @@ const User = new UserServices();
 const Location = new LocationServices();
 
 const Service = {
-    User,
-    Location
+    userService: User,
+    locationService: Location
 };
 
 export default Service;

@@ -2,14 +2,16 @@ import { Request, Response } from "express";
 import { middlewares } from "../middlewares";
 import Service from "../database/services";
 import { User } from "../database/entity/User";
-
+import { Location } from "../database/entity/Location";
 const { responses, messages, codes } = middlewares;
+import userControllers from "./userControllers";
+import dataSourceInstance from "../database/data-source";
 
-const { Location } = Service;
+const { locationService } = Service;
 
 class LocationControllers {
-    findAllLocations = async (req, res) => {
-        const response = await Location.findAllLocations()
+    static findAllLocations = async (req, res) => {
+        const response = await locationService.findAllLocations()
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
         }
@@ -24,9 +26,9 @@ class LocationControllers {
             res
         )
     }
-    findAllLocationsFromOneUser = async (req: Request, res: Response) => {
+    static findAllLocationsFromOneUser = async (req: Request, res: Response) => {
         const { user_id } = req.params;
-        const response = await Location.findAllLocationsFromOneUser(parseInt(user_id));
+        const response = await locationService.findAllLocationsFromOneUser(parseInt(user_id));
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);
         }
@@ -42,10 +44,10 @@ class LocationControllers {
         );
     };
 
-    findOneLocation = async (req: Request, res: Response) => {
+    static findOneLocation = async (req: Request, res: Response) => {
         const { user_id, location_id } = req.params;
 
-        const response = await Location.findOneLocation(parseInt(user_id), parseInt(location_id));
+        const response = await locationService.findOneLocation(parseInt(user_id), parseInt(location_id));
 
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);
@@ -54,9 +56,8 @@ class LocationControllers {
         return responses.success(codes.ok(), messages.ok(), response, res);
     };
 
-    createLocation = async (req: Request, res: Response) => {
+    static createLocation = async (req: Request, res: Response) => {
         const {user_id} = req.params;
-
         const {
             latitude,
             longitude,
@@ -68,27 +69,23 @@ class LocationControllers {
         } = req.body;
 
         const userId = parseInt(user_id);
-
-        const response = await Location.createLocation({
-            latitude,
-            longitude,
-            adresse,
-            userId
-        });
-
+        const userRepository = dataSourceInstance.getRepository(User);
+        const locationRepository = dataSourceInstance.getRepository(Location);
+        let user = await userRepository.findOne({where: {id: userId}})
+        const location = new Location();
+        location.latitude = latitude
+        location.longitude = longitude
+        location.adresse = adresse
+        location.user = user
+        const response = await locationRepository.save(location);
         if (!response) {
             return responses.error(codes.error(), messages.notFound(), res);
         }
 
-        return responses.success(
-            codes.created(),
-            messages.created(),
-            { latitude, longitude, adresse, userId },
-            res
-        );
+        return responses.success(codes.ok(), messages.ok(), response, res);
     };
 
-    updateLocation = async (req: Request, res: Response) => {
+    static updateLocation = async (req: Request, res: Response) => {
         const {
             latitude,
             longitude,
@@ -103,7 +100,7 @@ class LocationControllers {
 
         const { location_id } = req.params;
 
-        const response = await Location.updateLocation( parseInt(location_id), {
+        const response = await locationService.updateLocation( parseInt(location_id), {
             latitude,
             longitude,
             adresse,
@@ -128,10 +125,10 @@ class LocationControllers {
     };
 
 
-    deleteLocation = async (req: Request, res: Response) => {
+    static deleteLocation = async (req: Request, res: Response) => {
         const { location_id } = req.params;
 
-        const response = await Location.deleteLocation(parseInt(location_id));
+        const response = await locationService.deleteLocation(parseInt(location_id));
 
         if (!response) {
             return responses.error(codes.error(), messages.error(), res);

@@ -1,10 +1,10 @@
 import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { User } from "./entity/User";
-import { Location } from "./entity/Location";
+import {DataSource} from "typeorm"
+import {User} from "./entity/User";
+import {Location} from "./entity/Location";
 
 
-const dbConfig = () => new DataSource({
+const dataSourceInstance = new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3307,
@@ -14,9 +14,9 @@ const dbConfig = () => new DataSource({
     synchronize: true,
     logging: false,
     entities: [User, Location],
-    migrations: [],
+    migrations: ["src/app/migration/1660827915228-CreateAdminUser.ts"],
     subscribers: [],
 })
 
 
- export default dbConfig;
+export default dataSourceInstance;

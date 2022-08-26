@@ -1,29 +1,34 @@
 ### GET request all users
-GET http://localhost:7000/users/
+GET http://localhost:7000/user
 Accept: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
 
 ### GET request 1 user
-GET http://localhost:7000/users/1/
-Accept: application/json
+GET http://localhost:7000/user/2
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
 
 ### Send POST request with json body
-POST http://localhost:7000/create
+POST http://localhost:7000/user/create
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
 
 {
-  "mail": "vraiePersonne@test.com",
-  "password": "m123456"
+  "mail": "janedoe@mail.com",
+  "password": "janeMDPsecret",
+  "role":  "USER"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:7000/update/2
+PUT http://localhost:7000/user/update/7
 Accept: application/json
 Content-Type: application/json
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
 
 {
-  "mail": "updatedEmail@test.com",
-  "password": "motdepasseUpdated"
+  "mail": "anothermail@test.com",
+  "role": "USER"
 }
 
 ### Send DELETE request
-DELETE http://localhost:7000/delete/2
+DELETE http://localhost:7000/user/delete/7
+auth: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NjE1MTc3MTEsImV4cCI6MTY2MTUyMTMxMX0.t_YwHmjjsZR4ED725tk5vUHIY8VtRMrwiuGRy6mxvMQ
